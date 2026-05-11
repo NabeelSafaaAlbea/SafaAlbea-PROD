@@ -1,0 +1,244 @@
+How to setup Supabase for saving contact form 
+Supabase is actually **very easy** if you already know backend (you’re a .NET developer, so this will feel simple).
+Think of **Supabase = PostgreSQL + API + Auth + Storage** automatically.
+
+We will do it in **5 simple steps** for your Next.js contact form.
+
+---
+
+# 1️⃣ Create Supabase Project
+
+Go to:
+
+👉 [https://supabase.com](https://supabase.com)
+
+Steps:
+
+1. Click **Start your project**
+2. Login with GitHub or Google
+3. Click **New Project**
+4. Fill:
+
+| Field             | Value                  |
+| ----------------- | ---------------------- |
+| Organization      | Your account           |
+| Project Name      | `safaa-contact`        |
+| Database Password | Create strong password |
+| Region            | Middle East / Europe   |
+
+Wait **1–2 minutes**.
+
+---
+
+# 2️⃣ Create Contact Table
+
+Go to:
+
+**Supabase Dashboard → Table Editor → Create Table**
+
+Table name:
+
+```
+contact_requests
+```
+
+Columns:
+
+| Column        | Type                                            |
+| ------------- | ----------------------------------------------- |
+| id            | uuid (primary key, default: uuid_generate_v4()) |
+| name          | text                                            |
+| facility_type | text                                            |
+| frequency     | text                                            |
+| phone         | text                                            |
+| email         | text                                            |
+| message       | text                                            |
+| created_at    | timestamp (default now())                       |
+
+Example structure:
+
+```
+contact_requests
+----------------
+id
+name
+facility_type
+frequency
+phone
+email
+message
+created_at
+```
+
+Click **Save**.
+
+---
+
+# 3️⃣ Get API Keys
+
+Go to:
+
+**Project Settings → API**
+
+Copy these:
+
+```
+Project URL
+Anon Public Key
+```
+
+Example:
+
+```
+https://abcd123.supabase.co
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9....
+```
+
+---
+
+# 4️⃣ Install Supabase in Next.js
+
+Run:
+
+```bash
+npm install @supabase/supabase-js
+```
+
+---
+
+# 5️⃣ Create Supabase Client
+
+Create file:
+
+```
+/lib/supabaseClient.ts
+```
+
+```ts
+import { createClient } from "@supabase/supabase-js";
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+
+export const supabase = createClient(supabaseUrl, supabaseKey);
+```
+
+---
+
+# 6️⃣ Add Environment Variables
+
+Create `.env.local`
+
+```
+NEXT_PUBLIC_SUPABASE_URL=https://YOURPROJECT.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_PUBLIC_KEY
+```
+
+Restart server:
+
+```
+npm run dev
+```
+
+---
+
+# 7️⃣ Save Form Data to Supabase
+
+Now modify your **handleSubmit()**.
+
+Import supabase:
+
+```ts
+import { supabase } from "@/lib/supabaseClient";
+```
+
+Replace the simulated API call:
+
+```ts
+await new Promise((resolve) => setTimeout(resolve, 1000));
+```
+
+with:
+
+```ts
+const { error } = await supabase
+  .from("contact_requests")
+  .insert([
+    {
+      name: result.data.name,
+      facility_type: result.data.facilityType,
+      frequency: result.data.frequency,
+      phone: result.data.phone,
+      email: result.data.email,
+      message: result.data.message,
+    },
+  ]);
+
+if (error) {
+  throw error;
+}
+```
+
+---
+
+# 8️⃣ Final handleSubmit Logic
+
+Your submit flow becomes:
+
+```
+Validate form
+↓
+Insert into Supabase
+↓
+Show success modal
+↓
+Reset form
+```
+
+---
+
+# 9️⃣ Check Data
+
+After submitting form:
+
+Go to
+
+```
+Supabase Dashboard
+→ Table Editor
+→ contact_requests
+```
+
+You will see rows like:
+
+| name             | facility_type | phone       |
+| ---------------- | ------------- | ----------- |
+| Al Noor Hospital | Hospital      | +971 123456 |
+
+---
+
+# 🔐 Important Security Setting
+
+Go to:
+
+**Authentication → Policies**
+
+Enable **Row Level Security OFF** for now (for testing).
+
+Later we can secure it.
+
+---
+
+# 🚀 Result
+
+Your form will now:
+
+```
+User submits form
+        ↓
+Next.js sends request
+        ↓
+Supabase saves data
+        ↓
+You see data instantly in dashboard
+```

@@ -1,0 +1,148 @@
+/* ---------------- Fonts ---------------- */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap");
+
+/* ---------------- Tailwind ---------------- */
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ---------------- Root Tokens ---------------- */
+:root {
+
+  /* Core */
+  --background: 0 0% 100%;
+  --foreground: 160 30% 10%;
+
+  /* Brand */
+  --primary: 160 45% 20%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 174 60% 40%;
+  --secondary-foreground: 0 0% 100%;
+
+  /* UI */
+  --muted: 160 10% 95%;
+  --muted-foreground: 160 10% 40%;
+
+  --accent: 174 50% 35%;
+  --accent-foreground: 0 0% 100%;
+
+  --card: 160 15% 98%;
+  --card-foreground: 160 30% 10%;
+
+  /* Borders */
+  --border: 160 15% 85%;
+  --input: 160 15% 85%;
+  --ring: 160 45% 20%;
+
+  /* Radius */
+  --radius: 0.5rem;
+
+  /* Layout helpers */
+  --hero-overlay: linear-gradient(
+    135deg,
+    hsla(160,45%,12%,0.88),
+    hsla(174,42%,22%,0.78)
+  );
+
+  --section-gradient: linear-gradient(
+    180deg,
+    hsl(160,20%,97%),
+    hsl(0,0%,100%)
+  );
+
+  /* Typography */
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+}
+
+/* ---------------- Tailwind Mapping ---------------- */
+
+@theme inline {
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --radius-lg: var(--radius);
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+}
+
+/* ---------------- Base Styles ---------------- */
+
+@layer base {
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    font-family: var(--font-heading);
+  }
+
+}
+
+/* ---------------- Animations ---------------- */
+
+@keyframes fade-in-up {
+
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+/* ---------------- Helpers ---------------- */
+
+.logo-hover:hover {
+  filter: drop-shadow(0 0 2em rgba(37,99,235,0.4));
+  transition: filter 300ms;
+}/* globals.css */
+html {
+  scroll-behavior: smooth;
+}
