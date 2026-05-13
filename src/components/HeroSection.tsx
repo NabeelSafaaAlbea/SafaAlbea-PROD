@@ -22,9 +22,9 @@ const HeroSection = () => {
 
  <div className="relative z-10 container mx-auto px-6 pt-16 pb-10">
     <div className="max-w-3xl animate-fade-in-up">
-      <p className="text-primary-foreground/70 font-body text-lg mb-2" dir="rtl">
+      {/* <p className="text-primary-foreground/70 font-body text-lg mb-2" dir="rtl">
         صفاء البيئة لجمع ونقل النفايات
-      </p>
+      </p> */}
 
      <h1 className="text-4xl md:text-6xl font-extrabold font-heading text-primary-foreground leading-tight mb-4">
 
@@ -38,7 +38,7 @@ const HeroSection = () => {
         We specialize in the collection, transport, and safe disposal of medical
         and biohazardous waste from hospitals, laboratories, blood banks,
         dialysis centers, clinics, pharmacies, and research facilities across
-        the UAE.
+        the Dubai.
       </p>
 
       <div className="flex flex-wrap gap-4">
