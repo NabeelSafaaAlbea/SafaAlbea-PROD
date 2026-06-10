@@ -23,12 +23,12 @@ const services = [
     description:
       "All waste is weighed and electronically recorded in our database, ensuring full traceability and compliance from collection to final disposal.",
   },
-  {
-    image: "/images/service4.png",
-    title: "Environmentally Safe Disposal",
-    description:
-      "We use environmentally friendly technology for the final processing and safe disposal of all collected medical waste.",
-  },
+  // {
+  //   image: "/images/service4.png",
+  //   title: "Environmentally Safe Disposal",
+  //   description:
+  //     "We use environmentally friendly technology for the final processing and safe disposal of all collected medical waste.",
+  // },
 ];
 
 

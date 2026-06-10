@@ -1,4 +1,4 @@
-import { Building2, FlaskConical, Droplets, Microscope, Pill, Stethoscope, Building, Factory, GraduationCap, Store, Syringe } from "lucide-react";
+import { Building2, FlaskConical, Droplets, Microscope, Pill, Stethoscope, Building, Factory, GraduationCap, Store, Syringe, PawPrint } from "lucide-react";
 
 const industries = [
   { icon: Building2, title: "Hospitals" },
@@ -12,6 +12,7 @@ const industries = [
   { icon: GraduationCap, title: "Research Centers" },
   { icon: Pill, title: "Pharmacies" },
   { icon: Store, title: "Medical Stores" },
+  { icon: PawPrint, title: "Veterinary Clinics" },
 ];
 
 const IndustriesSection = () => {
@@ -30,7 +31,10 @@ const IndustriesSection = () => {
               key={industry.title}
               className="bg-primary-foreground/10 backdrop-blur-sm rounded-xl p-8 text-center border border-primary-foreground/20 hover:bg-primary-foreground/15 transition-colors"
             >
-              <industry.icon className="w-10 h-10 text-secondary mx-auto mb-4" />
+              <industry.icon
+                className={`w-10 h-10 text-secondary mx-auto mb-4 ${industry.title === "Veterinary Clinics" ? "rotate-315" : ""
+                  }`}
+              />
               <h3 className="text-sm md:text-base font-bold font-heading text-primary-foreground">
                 {industry.title}
               </h3>

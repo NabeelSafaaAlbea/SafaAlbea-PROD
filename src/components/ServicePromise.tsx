@@ -11,7 +11,11 @@ const ServicePromise = () => {
           </h2>
           <div className="w-20 h-1 bg-secondary mx-auto rounded-full mb-6" />
           <p className="text-lg md:text-xl text-muted-foreground font-body leading-relaxed mb-10">
-            Fast and top-notch service for total peace of mind. We ensure full compliance and safety in every transport. All waste is weighed, electronically recorded, and processed using environmentally friendly technology for final safe disposal.
+            We provide reliable scheduled medical waste collection and transport support for healthcare facilities in Dubai.
+            Each collection can include weighing records, service documentation, safe handling, and proper handover for
+            approved disposal processes.
+            Our goal is to help facilities maintain cleaner operations, safer waste segregation, and dependable collection
+            routines.
           </p>
           <div className="flex flex-wrap justify-center gap-8">
             <div className="flex items-center gap-3">
