@@ -27,11 +27,7 @@ const HeroSection = () => {
       </p>
 
      <h1 className="text-4xl md:text-6xl font-extrabold font-heading text-primary-foreground leading-tight mb-4">
-
-        Professional Medical Waste<br />
-        <span className="text-secondary">
-          Collection & Transport in Dubai
-        </span>
+        Hello
       </h1>
 
     <p className="text-lg md:text-xl text-primary-foreground/90 font-body mb-6 max-w-2xl">
