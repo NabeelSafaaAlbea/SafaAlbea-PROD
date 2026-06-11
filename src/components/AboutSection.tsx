@@ -14,21 +14,24 @@ const AboutSection = () => {
           </div>
           <div className="space-y-6 text-lg text-muted-foreground font-body leading-relaxed">
             <p>
-              Safaa Albea Waste Collection & Transport is a premier provider of specialized medical and biohazardous waste management in the UAE. With a deep commitment to environmental safety and public health, we bridge the gap between healthcare activities and safe, compliant disposal.
+              Safaa Albea Waste Collection & Transport is a Dubai-based medical waste collection and transport service
+              provider. We help healthcare facilities manage clinical waste, sharps waste, pharmaceutical waste, and expired
+              medicines through safe handling, scheduled collection, proper weighing, and documented handover procedures.
             </p>
             <p>
-              Our highly trained team operates a{" "}
+              Our service is designed to support healthcare providers with{" "}
               <strong className="text-foreground font-semibold">
-                specialized vehicle fleet equipped with advanced cooling systems
+                reliable, hygienic, and regulation-conscious waste
               </strong>
-              , ensuring that sensitive waste from hospitals, laboratories, pharmacies, and clinics is transported under strictly monitored hygienic conditions.
+              , movement from the facility to the approved disposal process.
             </p>
             <p>
-              At Safaa Albea, we don't just collect waste; we provide total peace of mind through a{" "}
+              We focus on professionalism, clear documentation,{" "}
               <strong className="text-foreground font-semibold">
-                visit-based service model
+                timely service, and responsible handling
               </strong>{" "}
-              that guarantees no hazardous material ever enters the general waste stream.
+              so that healthcare
+              facilities can manage their waste requirements with confidence
             </p>
           </div>
         </div>

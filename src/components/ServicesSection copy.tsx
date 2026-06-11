@@ -16,11 +16,11 @@ const services = [
     title: "Dental Clinic Waste Solutions",
     description: "All waste is weighed and electronically recorded in our database, ensuring full traceability and compliance from collection to final disposal for dental clinics and medical centers.",
   },
-  {
-    icon: ShieldCheck,
-    title: "Environmentally Safe Disposal",
-    description: "We use environmentally friendly technology for the final processing and safe disposal of all collected medical waste, protecting both people and the planet.",
-  },
+  // {
+  //   icon: ShieldCheck,
+  //   title: "Environmentally Safe Disposal",
+  //   description: "We use environmentally friendly technology for the final processing and safe disposal of all collected medical waste, protecting both people and the planet.",
+  // },
 ];
 
 const ServicesSection = () => {
@@ -31,7 +31,7 @@ const ServicesSection = () => {
           <h2 className="text-3xl md:text-5xl font-extrabold font-heading text-foreground mb-4">
             Our Services
           </h2>
-           <div className="w-20 h-1 bg-secondary mx-auto rounded-full mb-6" />
+          <div className="w-20 h-1 bg-secondary mx-auto rounded-full mb-6" />
           <p className="text-muted-foreground font-body max-w-2xl mx-auto text-lg">
             We provide services based on the number of visits — from daily to weekly — to ensure no medical waste is ever disposed of with general waste.
           </p>
