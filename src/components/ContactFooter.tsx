@@ -15,7 +15,7 @@ const ContactFooter = () => {
             <MapPin className="w-8 h-8 text-secondary mb-3" />
             <h3 className="font-heading font-bold text-primary-foreground mb-2">Office Address</h3>
             <p className="text-primary-foreground/70 font-body leading-relaxed">
-              Office C-227, 105-Muna Aljaziri Building<br />
+              Office C-227, 105-Muna Aljaziri Buildings<br />
               Al Mararr, Dubai, UAE
             </p>
           </div>
