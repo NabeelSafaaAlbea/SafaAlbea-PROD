@@ -80,7 +80,7 @@ const ContactFooter = () => {
 
         <div className="mt-8 pt-6 border-t border-primary-foreground/10 text-center">
           <p className="text-primary-foreground/50 font-body text-sm">
-            © {new Date().getFullYear()} Safaa Albea Waste Collections & Transport. All right reserved.
+            © {new Date().getFullYear()} Safaa Albea Waste Collections & Transport. All rights reserved.
           </p>
         </div>
       </div>
