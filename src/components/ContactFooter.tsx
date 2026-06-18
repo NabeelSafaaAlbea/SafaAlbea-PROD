@@ -52,13 +52,28 @@ const ContactFooter = () => {
 
         {/* Social Media Icons - Larger Size */}
         <div className="flex justify-center gap-6 mt-6">
-          <a href="#" className="text-secondary hover:text-primary-foreground transition">
+          <a
+            href="https://www.facebook.com/61583662793997"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-secondary hover:text-primary-foreground transition"
+          >
             <Facebook className="w-8 h-8" />
           </a>
-          <a href="#" className="text-secondary hover:text-primary-foreground transition">
+          <a
+            href="https://www.linkedin.com/company/safaa-albea-waste-collection-transport/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-secondary hover:text-primary-foreground transition"
+          >
             <Linkedin className="w-8 h-8" />
           </a>
-          <a href="#" className="text-secondary hover:text-primary-foreground transition">
+          <a
+            href="https://www.instagram.com/safaa.albea/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-secondary hover:text-primary-foreground transition"
+          >
             <Instagram className="w-8 h-8" />
           </a>
         </div>
